@@ -1,0 +1,11 @@
+# Site settings
+title: Harry Fox - Web Developer
+email: henry.george.fox@gmail.com
+description: Beta construction for harryfox.me
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://harryfox.me" # the base hostname & protocol for your site
+twitter_username: harrygfox
+github_username:  harrygfox
+
+# Build settings
+markdown: kramdown
