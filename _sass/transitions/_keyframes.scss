@@ -1,8 +1,90 @@
+@mixin transform($value) {
+    -ms-transform: $value; /* IE 9 */
+    -webkit-transform: $value; /* Chrome, Safari, Opera */
+    transform: $value;
+}
+// Be aware, transform translate3d not available before IE10.
+
+// Fade in from invisible to visible
 @keyframes fadeIn {
     0% {
         opacity: 0;
     }
     100% {
-        opacity: 100;
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+// Fade from bottom to the top
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(0, 100%, 0));
+    }
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@-webkit-keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(0, 100%, 0));
+    }
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+
+// Fade from top to the bottom
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(0, -100%, 0));
+    }
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(0, -100%, 0));
+    }
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+
+// Fade from right to left
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(100%, 0, 0));
+    }
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@-webkit-keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(100%, 0, 0));
+    }
+    100% {
+        opacity: 1;
+        @include transform(none);
     }
 }

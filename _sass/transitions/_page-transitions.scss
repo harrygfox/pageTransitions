@@ -1,0 +1,44 @@
+@mixin animationName($name) {
+    -webkit-animation-name: $name;
+    animation-name: $name;
+}
+
+.m-scene {
+    // Parent class
+
+    .scene_element {
+        // Base class to apply to all animations
+        -webkit-animation-duration: 0.25s;
+        animation-duration: 0.25s;
+        
+        -webkit-transition-timing-function: ease-in;
+        transition-timing-function: ease-in;
+
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .scene_element--fadein {
+        @include animationName(fadeIn);
+    }
+
+    .scene_element--fadeinup {
+        @include animationName(fadeInUp);
+    }
+
+    .scene_element--fadeindown {
+        @include animationName(fadeInDown);
+    }
+
+    .scene_element--fadeinright {
+        @include animationName(fadeInRight);
+    }
+
+    // Reverse exiting animation to remove blink
+    &.is-exiting {
+        .scene_element {
+            -webkit-animation-direction: alternate-reverse;
+            animation-direction: alternate-reverse;
+        }
+    }
+}

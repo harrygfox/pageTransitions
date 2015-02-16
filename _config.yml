@@ -9,3 +9,5 @@ github_username:  harrygfox
 
 # Build settings
 markdown: kramdown
+sass:
+    style: :compressed
